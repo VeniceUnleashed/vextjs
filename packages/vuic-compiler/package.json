@@ -1,0 +1,8 @@
+{
+  "name": "@vextjs/vuic-compiler",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "scripts": {
+    "postinstall": "node src/lib/postinstall.js"
+  }
+}

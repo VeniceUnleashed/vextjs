@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@vextjs/vite-plugin": ["packages/vite-plugin/src/index.ts"],
+      "@vextjs/vuic-compiler": ["packages/vuic-compiler/src/index.ts"],
+      "@vextjs/webpack-plugin": ["packages/webpack-plugin/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@vextjs/bridge": ["packages/bridge/src/index.ts"],
+      "@vextjs/emulator": ["packages/emulator/src/index.ts"],
       "@vextjs/vite-plugin": ["packages/vite-plugin/src/index.ts"],
       "@vextjs/vuic-compiler": ["packages/vuic-compiler/src/index.ts"],
       "@vextjs/webpack-plugin": ["packages/webpack-plugin/src/index.ts"]

@@ -11,11 +11,11 @@ A collection of Venice Unleashed Extension (VEXT) libraries for JavaScript
 
 ## Packages
 
-| Package                                         | Version                                                                                                             |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| [@vext/webpack-plugin](packages/webpack-plugin) | [![npm](https://img.shields.io/npm/v/@vextjs/webpack-plugin.svg)](https://npmjs.com/package/@vextjs/webpack-plugin) |
-| [@vext/vite-plugin](packages/vite-plugin)       | [![npm](https://img.shields.io/npm/v/@vextjs/vite-plugin.svg)](https://npmjs.com/package/@vextjs/vite-plugin)       |
-| [@vext/vuic-compiler](packages/vuic-compiler)   | [![npm](https://img.shields.io/npm/v/@vextjs/vuic-compiler.svg)](https://npmjs.com/package/@vextjs/vuic-compiler)   |
+| Package                                           | Version                                                                                                                                |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| [@vextjs/webpack-plugin](packages/webpack-plugin) | [![webpack-plugin version](https://img.shields.io/npm/v/@vextjs/webpack-plugin.svg)](https://npmjs.com/package/@vextjs/webpack-plugin) |
+| [@vextjs/vite-plugin](packages/vite-plugin)       | [![vite-plugin version](https://img.shields.io/npm/v/@vextjs/vite-plugin.svg)](https://npmjs.com/package/@vextjs/vite-plugin)          |
+| [@vextjs/vuic-compiler](packages/vuic-compiler)   | [![vuic-compiler](https://img.shields.io/npm/v/@vextjs/vuic-compiler.svg)](https://npmjs.com/package/@vextjs/vuic-compiler)            |
 
 ## License
 

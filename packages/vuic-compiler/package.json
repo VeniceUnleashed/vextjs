@@ -1,7 +1,30 @@
 {
   "name": "@vextjs/vuic-compiler",
+  "description": "A simple Node.js wrapper for the Venice Unleashed WebUI compiler",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Paul Hobbel",
+    "email": "hello@paulhobbel.me",
+    "url": "https://paulhobbel.me"
+  },
   "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BF3RM/vextjs.git",
+    "directory": "packages/vuic-compiler"
+  },
+  "bugs": {
+    "url": "https://github.com/BF3RM/vextjs/issues"
+  },
+  "homepage": "https://github.com/BF3RM/vextjs/tree/main/packages/vuic-compilerreadme",
+  "keywords": [
+    "venice-unleashed",
+    "vext",
+    "vuic",
+    "webui",
+    "proxy"
+  ],
   "scripts": {
     "postinstall": "node src/lib/postinstall.js"
   }

@@ -1,5 +1,31 @@
 {
   "name": "@vextjs/webpack-plugin",
+  "description": "Integrates the Venice Unleashed WebUI compiler into Webpack",
   "version": "0.0.1",
-  "type": "commonjs"
+  "license": "MIT",
+  "author": {
+    "name": "Paul Hobbel",
+    "email": "hello@paulhobbel.me",
+    "url": "https://paulhobbel.me"
+  },
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BF3RM/vextjs.git",
+    "directory": "packages/webpack-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/BF3RM/vextjs/issues"
+  },
+  "homepage": "https://github.com/BF3RM/vextjs/tree/main/packages/webpack-plugin#readme",
+  "keywords": [
+    "venice-unleashed",
+    "vext",
+    "webpack",
+    "vuic",
+    "webui"
+  ],
+  "peerDependencies": {
+    "webpack": ">=4.0.0"
+  }
 }

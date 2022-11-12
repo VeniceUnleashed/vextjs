@@ -42,10 +42,7 @@ export default function vext(options?: VextPluginConfig): PluginOption {
         return;
       }
 
-      return vuicc.compile({
-        sourcePath: options.dir,
-        outputPath,
-      });
+      return vuicc.compile(options.dir, outputPath);
     },
   };
 }

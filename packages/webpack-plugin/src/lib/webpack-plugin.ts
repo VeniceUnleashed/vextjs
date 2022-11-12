@@ -2,25 +2,22 @@ import type { Compiler, WebpackPluginInstance } from 'webpack';
 
 import { VuicCompiler } from '@vextjs/vuic-compiler';
 
-export interface VextPackConfig {
-  // Output path, defaults to the Webpack output path (required)
-  outputPath: string;
+export interface VextPackPluginOptions {
+  // Specify the location where the ui.vuic should be placed, defaults to '../'
+  outputPath?: string;
 
   // Make a hot reloadable ui build, this creates a proxy ui that remotely loads the real ui
-  hotReloadSupport: boolean;
+  hotReloadSupport?: boolean;
 }
 
 export class VextPackPlugin implements WebpackPluginInstance {
   private _vuicc: VuicCompiler;
-  private _options: VextPackConfig;
+  private _outputPath: string;
+  private _hotReloadSupport: boolean;
 
-  constructor(options?: Partial<VextPackConfig>) {
-    this._options = {
-      outputPath: '../',
-      hotReloadSupport: false,
-      ...options,
-    };
-
+  constructor(options?: VextPackPluginOptions) {
+    this._outputPath = options?.outputPath ?? '../';
+    this._hotReloadSupport = options?.hotReloadSupport ?? false;
     this._vuicc = new VuicCompiler();
   }
 
@@ -32,12 +29,12 @@ export class VextPackPlugin implements WebpackPluginInstance {
       return;
     }
 
-    if (this._options.hotReloadSupport) {
+    if (this._hotReloadSupport) {
       console.log('VextPack: Enabling Hot Reload Support');
-      compiler.hooks.beforeRun
+      compiler.hooks.beforeRun;
       compiler.hooks.afterPlugins.tap(VextPackPlugin.name, () => {
         // TODO: Get dev server port
-        return this._vuicc.compileProxy(8080, this._options.outputPath);
+        return this._vuicc.compileProxy(8080, this._outputPath);
       });
     } else {
       compiler.hooks.afterEmit.tapPromise(
@@ -57,10 +54,10 @@ export class VextPackPlugin implements WebpackPluginInstance {
             throw new Error('Failed to resolve output directory');
           }
 
-          return this._vuicc.compile({
-            sourcePath: compilation.outputOptions.path,
-            outputPath: this._options.outputPath,
-          });
+          return this._vuicc.compile(
+            compilation.outputOptions.path,
+            this._outputPath
+          );
         }
       );
     }

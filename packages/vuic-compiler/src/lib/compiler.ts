@@ -5,11 +5,6 @@ import { join } from 'path';
 import { distFile } from './constants';
 import { generateProxyFiles } from './proxy';
 
-export interface CompilerOptions {
-  sourcePath: string;
-  outputPath: string;
-}
-
 export class VuicCompiler {
   constructor() {
     try {
@@ -23,17 +18,14 @@ export class VuicCompiler {
 
   /**
    * Compiles the source path into a ui.vuic file at the output path
-   * @param options compiler options
+   * @param sourcePath source path that contains files to add to ui container
+   * @param outputPath output path for the ui.vuic file
    */
-  compile(options: CompilerOptions): Promise<void> {
-    const child = spawn(
-      distFile,
-      [options.sourcePath, join(options.outputPath, 'ui.vuic')],
-      {
-        stdio: 'inherit',
-        cwd: process.cwd(),
-      }
-    );
+  compile(sourcePath: string, outputPath: string): Promise<void> {
+    const child = spawn(distFile, [sourcePath, join(outputPath, 'ui.vuic')], {
+      stdio: 'inherit',
+      cwd: process.cwd(),
+    });
 
     return new Promise((resolve, reject) => {
       child.on('close', (code) => {
@@ -48,9 +40,6 @@ export class VuicCompiler {
   async compileProxy(proxyPort: number, outputPath: string) {
     const proxyPath = await generateProxyFiles(proxyPort);
 
-    return this.compile({
-      sourcePath: proxyPath,
-      outputPath,
-    });
+    return this.compile(proxyPath, outputPath);
   }
 }

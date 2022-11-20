@@ -20,7 +20,7 @@ yarn -D @vextjs/webpack-plugin
 
 This package will automatically download the latest version of the WebUI compiler during installation.
 
-Using the compiler is fairly simple. Provider the source path that contains your compiled WebUI HTML, JavaScript and CSS files. And provide the output path where the compiler should put `the ui.vuic` file
+Using the compiler is fairly simple. Provider the source path that contains your compiled WebUI HTML, JavaScript and CSS files. And provide the output path where the compiler should put the `ui.vuic` file
 
 ```ts
 import { VuicCompiler } from '@vextjs/vuic-compiler';

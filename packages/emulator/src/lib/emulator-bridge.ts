@@ -1,5 +1,5 @@
 import { VextBridge } from '@vextjs/bridge';
-import { VextEmulatorEventHandlerRegistry } from './registry';
+import { VextEmulatorRegistry } from './registry';
 
 export class VextEmulatorBridge implements VextBridge {
   Show(): boolean {
@@ -42,21 +42,17 @@ export class VextEmulatorBridge implements VextBridge {
     return false;
   }
 
-  DispatchEvent(event: string, ...args: unknown[]): boolean {
-    VextEmulatorEventHandlerRegistry.getEventHandlers(event).forEach(
-      (handler) => {
-        requestAnimationFrame(() => handler(...args));
-      }
-    );
+  DispatchEvent<T>(event: string, ...args: T[]): boolean {
+    VextEmulatorRegistry.getEventHandlers(event).forEach((handler) => {
+      requestAnimationFrame(() => handler(...args));
+    });
     return true;
   }
 
-  DispatchEventLocal(event: string, ...args: unknown[]): boolean {
-    VextEmulatorEventHandlerRegistry.getLocalEventHandlers(event).forEach(
-      (handler) => {
-        requestAnimationFrame(() => handler(...args));
-      }
-    );
+  DispatchEventLocal<T>(event: string, ...args: T[]): boolean {
+    VextEmulatorRegistry.getLocalEventHandlers(event).forEach((handler) => {
+      requestAnimationFrame(() => handler(...args));
+    });
     return true;
   }
 }

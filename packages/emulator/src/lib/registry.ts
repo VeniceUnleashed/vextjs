@@ -2,7 +2,7 @@ export interface VextEmulatorEventHandler {
   (...args: unknown[]): void;
 }
 
-export class VextEmulatorEventHandlerRegistry {
+export class VextEmulatorRegistry {
   private static handlers = new Map<string, VextEmulatorEventHandler[]>();
   private static localHandlers = new Map<string, VextEmulatorEventHandler[]>();
 

@@ -54,12 +54,12 @@ export interface VextBridge {
    * @param event Event to dispatch
    * @param payload Optional event payload
    */
-  DispatchEvent<T>(event: string, payload?: T): boolean;
+  DispatchEvent<T>(event: string, ...payload: T[]): boolean;
 
   /**
    * Dispatches an local event
    * @param event Event to dispatch
    * @param payload Optional event payload
    */
-  DispatchEventLocal<T>(event: string, payload?: T): boolean;
+  DispatchEventLocal<T>(event: string, ...payload: T[]): boolean;
 }

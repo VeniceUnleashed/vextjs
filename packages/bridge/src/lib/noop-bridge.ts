@@ -1,5 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { VextBridge } from './bridge';
 
+/**
+ * A no operation version of {@link VextBridge} to disable communication with VEXT
+ *
+ * This implementation can be used for in-browser development,
+ * as it will not attempt to use WebUI.Call and thus not cause any errors
+ */
 export class VextNoopBridge implements VextBridge {
   Show(): boolean {
     return false;
@@ -31,10 +39,10 @@ export class VextNoopBridge implements VextBridge {
   ResetMouse(): boolean {
     return false;
   }
-  DispatchEvent(): boolean {
+  DispatchEvent<T>(_event: string, ..._args: T[]): boolean {
     return false;
   }
-  DispatchEventLocal(): boolean {
+  DispatchEventLocal<T>(_event: string, ..._args: T[]): boolean {
     return false;
   }
 }

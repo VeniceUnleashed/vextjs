@@ -8,7 +8,7 @@ import { VextBridge } from './bridge';
  * This implementation can be used for in-browser development,
  * as it will not attempt to use WebUI.Call and thus not cause any errors
  */
-export class VextNoopBridge implements VextBridge {
+export class NoopVextBridge implements VextBridge {
   Show(): boolean {
     return false;
   }

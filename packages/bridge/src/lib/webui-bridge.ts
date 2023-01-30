@@ -23,7 +23,7 @@ import { VextBridge } from './bridge';
  * bridge.DispatchEventLocal('KickPlayer', 5, 'Stop killing me');
  * ```
  */
-export class VextWebUIBridge implements VextBridge {
+export class WebUIVextBridge implements VextBridge {
   Show(): boolean {
     return WebUI.Call('Show');
   }
